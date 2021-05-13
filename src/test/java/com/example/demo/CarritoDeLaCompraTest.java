@@ -21,4 +21,13 @@ class CarritoDeLaCompraTest {
         Assert.assertEquals(300, carritoDeLaCompra.calcularPrecioTotalRefMethod());
     }
 
+    @Test
+    public void shouldCalculateTotalDiscount() throws Exception {
+
+        CarritoBuilder builder = new CarritoBuilder(20,100);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertEquals(100, carritoDeLaCompra.calcularDescuentoTotal(100));
+
+    }
+
 }
