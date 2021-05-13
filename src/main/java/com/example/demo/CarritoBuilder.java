@@ -10,11 +10,20 @@ public class CarritoBuilder {
             precios.add(random.intValue());
         }
     }
+
+    public CarritoBuilder addMultiple(int size, int value){
+        for(int i = 0; i < size; i++){
+            precios.add(value);
+        }
+        return this;
+    }
+
     public CarritoBuilder(int size, int value){
         for(int i = 0; i < size; i++){
             precios.add(value);
         }
     }
+
     public CarritoDeLaCompra build(){
         return new CarritoDeLaCompra(this.precios);
     }

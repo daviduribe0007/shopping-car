@@ -7,6 +7,11 @@ public class CarritoDeLaCompra {
     public CarritoDeLaCompra(Collection<Integer> precios) {
         this.precios = precios;
     }
+
+
+
+
+
     public int calcularPrecioTotalRefMethod() {
         int precioTotal = 0;
         for(Integer precio : precios){
@@ -36,6 +41,16 @@ public class CarritoDeLaCompra {
                 .count();
 
         return (cantidadConDescuento*5/100)*numeroDeDescuentos;
+    }
+
+    public boolean detectarError() {
+        boolean negativeFind = false;
+        for (Integer precio : precios) {
+            if (precio < 0) {
+                negativeFind = true;
+            }
+        }
+        return negativeFind;
     }
 
     public int contarNumeroProductos() {
