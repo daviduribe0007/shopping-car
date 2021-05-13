@@ -7,7 +7,7 @@ public class CarritoDeLaCompra {
     public CarritoDeLaCompra(Collection<Integer> precios) {
         this.precios = precios;
     }
-    public int calcularPrecioTotal() {
+    public int calcularPrecioTotalRefMethod() {
         int precioTotal = 0;
         for(Integer precio : precios){
             precioTotal += precio;

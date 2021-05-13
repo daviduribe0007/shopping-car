@@ -6,19 +6,19 @@ import org.junit.jupiter.api.Test;
 
 class CarritoDeLaCompraTest {
     @Test
-    public void shouldReturnTheCountOfAllItems() throws
-            Exception {
-        CarritoBuilder builder = new CarritoBuilder(30);
+    public void shouldCalculateTotalPriceLambda() throws Exception {
+
+        CarritoBuilder builder = new CarritoBuilder(60, 5);
         CarritoDeLaCompra carritoDeLaCompra = builder.build();
-        Assert.assertEquals(30,
-                carritoDeLaCompra.contarNumeroProductos());
+        Assert.assertEquals(300, carritoDeLaCompra.calcularPrecioTotalLambda());
     }
+
     @Test
-    public void shouldCalculateTotalPrice() throws Exception {
+    public void shouldCalculateTotalPriceRefMethod() throws Exception {
+
         CarritoBuilder builder = new CarritoBuilder(60,5);
         CarritoDeLaCompra carritoDeLaCompra = builder.build();
-        Assert.assertEquals(300,
-                carritoDeLaCompra.calcularPrecioTotal());
+        Assert.assertEquals(300, carritoDeLaCompra.calcularPrecioTotalRefMethod());
     }
 
 }
