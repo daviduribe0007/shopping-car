@@ -29,6 +29,14 @@ public class CarritoDeLaCompra {
         }
         return descuentoTotal;
     }
+    public long calcularDescuentoTotalLambda(int cantidadConDescuento){
+
+        Long numeroDeDescuentos = this.precios.stream()
+                .filter(precio -> precio.intValue() >= cantidadConDescuento)
+                .count();
+
+        return (cantidadConDescuento*5/100)*numeroDeDescuentos;
+    }
 
     public int contarNumeroProductos() {
         return precios.size();
