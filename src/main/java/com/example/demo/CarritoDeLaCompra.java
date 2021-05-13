@@ -53,6 +53,11 @@ public class CarritoDeLaCompra {
         return negativeFind;
     }
 
+    public boolean detectarErrorAnyMatch() {
+        return this.precios.stream().anyMatch(precio -> precio.intValue() < 0);
+    }
+
+
     public int contarNumeroProductos() {
         return precios.size();
     }

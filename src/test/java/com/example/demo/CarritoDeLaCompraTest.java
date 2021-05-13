@@ -44,5 +44,16 @@ class CarritoDeLaCompraTest {
         Assert.assertTrue(carritoDeLaCompra.detectarError());
     }
 
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeAnyMatch(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertTrue(carritoDeLaCompra.detectarErrorAnyMatch());
+    }
+
+
+
 
 }
