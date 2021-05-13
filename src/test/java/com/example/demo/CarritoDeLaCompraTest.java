@@ -71,6 +71,37 @@ class CarritoDeLaCompraTest {
     }
 
 
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeAnyMatchParallel(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        carritoDeLaCompra.detectarErrorAnyMatchParallel();
+    }
+
+
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeNumberFindAnyParallel(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertTrue(carritoDeLaCompra.detectarErrorFindAnyParallel());
+    }
+
+
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeNumberFindFirstParallel(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertTrue(carritoDeLaCompra.detectarErrorFindFirstParallel());
+    }
+
+
+
 
 
 }
