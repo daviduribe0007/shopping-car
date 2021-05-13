@@ -53,6 +53,23 @@ class CarritoDeLaCompraTest {
         Assert.assertTrue(carritoDeLaCompra.detectarErrorAnyMatch());
     }
 
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeNumberFindAny(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertTrue(carritoDeLaCompra.detectarErrorFindAny());
+    }
+    @Test
+    public void shouldDetectErrorAndReturnTrueWhenAPriceIsNegativeNumberFindFirst(){
+        CarritoBuilder builder = new CarritoBuilder(TOTAL_SIZE,NUMBER_ADD);
+        builder.add(-1);
+        builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
+        CarritoDeLaCompra carritoDeLaCompra = builder.build();
+        Assert.assertTrue(carritoDeLaCompra.detectarErrorFindFirst());
+    }
+
 
 
 
