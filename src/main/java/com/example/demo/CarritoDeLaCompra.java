@@ -14,6 +14,12 @@ public class CarritoDeLaCompra {
         }
         return precioTotal;
     }
+    public int calcularPrecioTotalLambda() {
+        return this.precios.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
     public int contarNumeroProductos() {
         return precios.size();
     }
