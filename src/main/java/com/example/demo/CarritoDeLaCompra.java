@@ -19,6 +19,16 @@ public class CarritoDeLaCompra {
                 .mapToInt(Integer::intValue)
                 .sum();
     }
+    public long calcularDescuentoTotal(int cantidadConDescuento){
+        long descuentoTotal = 0;
+
+        for(Integer precio : precios){
+            if(precio >= cantidadConDescuento){
+                descuentoTotal += (cantidadConDescuento*5)/100;
+            }
+        }
+        return descuentoTotal;
+    }
 
     public int contarNumeroProductos() {
         return precios.size();
